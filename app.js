@@ -2,6 +2,7 @@ import express from "express";
 import errorHandler from "./errorHandler.js";
 import { creatFiles } from "./fileHandle.js";
 import { creatrUserC } from "./controlers/userC.js";
+import { creatrEventsC } from "./controlers/eventC.js";
 
 
 const app = express();
@@ -17,6 +18,7 @@ app.use(errorHandler);
 
 
 app.post("/user/register", creatrUserC);
+app.post("/creator/events", creatrEventsC);
 
 
 app.listen(port, () => console.log(`setrver runing on port ${port}`));
