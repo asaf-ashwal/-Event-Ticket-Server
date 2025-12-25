@@ -3,7 +3,7 @@ import { creatrUserS, reedUser, usersSummaryS } from "../services/userS.js";
 async function creatrUserC(req, res) {
   try {
     const user = req.body;
-    if ((!user.username, !user.password)) {
+    if ((!user.username|| !user.password)) {
      return res.status(401).send("user most have username and password");
     }
     const response = await creatrUserS(user);

@@ -1,14 +1,1 @@
-[
-  {
-    "eventName": "partyyyy",
-    "ticketsForSale": 3,
-    "username": "asaf",
-    "password": "1234"
-  },
-  {
-    "eventName": "hanoca party",
-    "ticketsForSale": 15,
-    "username": "asaf",
-    "password": "1234"
-  }
-]
+[{"eventName":"partyyyy","ticketsForSale":3,"username":"asaf","password":"1234"},{"eventName":"hanoca party","ticketsForSale":15,"username":"asaf","password":"1234"},{"eventName":"momo partyyyy","ticketsForSale":50,"username":"asaf","password":"1234"}]

@@ -1,14 +1,15 @@
-// import { creatrUserS } from "../services/userS.js";
 
 import { creatrEventS } from "../services/eventS.js";
 
 async function creatrEventsC(req, res) {
   try {
     const event = req.body;
+    console.log(event.ticketsForSale);
+    
     if (
-      (!event.eventName,
-      !event.ticketsForSale,
-      !event.username,
+      (!event.eventName||
+      !event.ticketsForSale||
+      !event.username||
       !event.password)
     ) {
      return res.status(401).send("event most have eventName, ticketsForSale, username  and password");

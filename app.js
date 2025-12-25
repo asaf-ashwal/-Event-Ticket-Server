@@ -18,4 +18,5 @@ app.use(errorHandler);
 app.post("/user/register", creatrUserC);
 app.post("/creator/events", userExist, creatrEventsC);
 
+
 app.listen(port, () => console.log(`setrver runing on port ${port}`));

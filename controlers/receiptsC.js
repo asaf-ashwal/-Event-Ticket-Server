@@ -9,9 +9,9 @@ async function creatReceiptsC(req, res) {
     
     const receipt = req.body;
     if (
-      (!receipt.username,
-      !receipt.password,
-      !receipt.eventName,
+      (!receipt.username||
+      !receipt.password||
+      !receipt.eventName||
       !receipt.quantity)
     ) {
       return res
