@@ -1,12 +1,8 @@
-// import { creatrUserS } from "../services/userS.js";
 
 import { creatReceiptS } from "../services/receiptsS.js";
 
-// import { creatrEventS } from "../services/eventS.js";
-
 async function creatReceiptsC(req, res) {
-  // try {
-    
+  try {
     const receipt = req.body;
     if (
       (!receipt.username||
@@ -18,12 +14,11 @@ async function creatReceiptsC(req, res) {
         .status(401)
         .send("event most have eventName, quantity, username  and password");
     }
-
     const response = await creatReceiptS(receipt);
     res.send(response);
-  // } catch (err) {
-  //   res.status(err.status || 401).send(err.msg || "creatReceiptsC err");
-  // }
+  } catch (err) {
+    res.status(err.status || 401).send(err.msg || "creatReceiptsC err");
+  }
 }
 
 export { creatReceiptsC };

@@ -14,10 +14,9 @@ async function creatrEventS(event) {
     message: "Event created successfully",
   };
 }
-
 async function reedEvent(eventName) {
   const events = await reed_file("data/events.json");
-  const event = events.find((event) => event.eventName === eventName);
+  const event = events.find((event) => event.eventName.toLowerCase() === eventName.toLowerCase());
 
   return event;
 }

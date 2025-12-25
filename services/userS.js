@@ -14,6 +14,7 @@ async function creatrUserS(newUser) {
   };
 }
 
+
 async function reedUser(username, password) {
   const users = await reed_file("data/users.json");
   const isExist = users.find(
@@ -21,6 +22,7 @@ async function reedUser(username, password) {
   );
   return isExist ? users : undefined;
 }
+
 
 async function usersSummaryS(username) {
   const users = await reed_file("data/users.json");
@@ -33,7 +35,7 @@ async function usersSummaryS(username) {
     (receipt) => receipt.username === username
   );
   let totalTickets = 0;
-  userReceipts.forEach((r) => (totalTickets += r?.quantity));
+  userReceipts.forEach((r) => totalTickets += r?.quantity);
   const res = {
     totalTicketsBought: totalTickets,
     events: userReceipts.map((r) => r.eventName),
