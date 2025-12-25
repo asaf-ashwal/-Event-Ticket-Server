@@ -1,19 +1,15 @@
 import express from "express";
-import { creatrUserC } from "../controlers/userC";
+import userExist from "../midlewere/userExist.js";
+import { creatReceiptsC } from "../controlers/receiptsC.js";
+import { usersSummaryC } from "../controlers/userC.js";
 
 const router = express.Router();
-// creatrUserC
-
-// router.get("/register", creatrUserC);
 
 
+router.post("/tickets/buy", userExist,creatReceiptsC);
 
-// router.get("/:id", getAgent);
 
-// router.post("/", creatA);
+router.get("/:username/summary", usersSummaryC);
 
-// router.put("/:id", updateA);
-
-// router.delete("/:id", deleteA);
 
 export default router;

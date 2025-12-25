@@ -1,4 +1,4 @@
-import { creatrUserS } from "../services/userS.js";
+import { creatrUserS, reedUser, usersSummaryS } from "../services/userS.js";
 
 async function creatrUserC(req, res) {
   try {
@@ -9,8 +9,21 @@ async function creatrUserC(req, res) {
     const response = await creatrUserS(user);
     res.send(response);
   } catch (err) {
-    res.status(err.status || 401).send(err.msg || "creatrEventsC err");
+    res.status(err.status || 401).send(err.msg || err);
   }
 }
 
-export { creatrUserC };
+
+async function usersSummaryC(req, res) {
+  try {
+  const username = req.params.username;
+  const response = await usersSummaryS(username);
+    res.send(response);
+}
+  catch (err) {
+    res.status(err.status || 401).send(err.msg || err);
+  }
+}
+
+
+export { creatrUserC, usersSummaryC };
